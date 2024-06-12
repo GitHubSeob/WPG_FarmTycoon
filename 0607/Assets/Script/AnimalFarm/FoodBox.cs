@@ -16,7 +16,7 @@ public class FoodBox : MonoBehaviour
         foodCount = n;
     }
 
-    public bool decFoodCount()
+    public bool subFoodCount()
     {
         if (foodCount > 0)
         {

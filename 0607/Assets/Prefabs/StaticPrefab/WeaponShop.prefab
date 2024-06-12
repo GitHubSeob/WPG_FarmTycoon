@@ -7710,6 +7710,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2372354356165460609}
+  - component: {fileID: -6726864923181830953}
   m_Layer: 0
   m_Name: WeaponShop
   m_TagString: Untagged
@@ -7813,6 +7814,27 @@ Transform:
   - {fileID: 8757524688314752265}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &-6726864923181830953
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8450171157957536559}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9, y: 4, z: 4}
+  m_Center: {x: 0.5, y: 1.5, z: 0}
 --- !u!1 &8559321944111721918
 GameObject:
   m_ObjectHideFlags: 0

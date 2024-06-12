@@ -7291,6 +7291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1547025458162133271}
+  - component: {fileID: -2125466940333715436}
   m_Layer: 0
   m_Name: VegetableShop
   m_TagString: Untagged
@@ -7321,6 +7322,27 @@ Transform:
   - {fileID: 4374420217707400505}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &-2125466940333715436
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6917558630316848751}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5, y: 4, z: 3}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1 &7058477689975553427
 GameObject:
   m_ObjectHideFlags: 0
