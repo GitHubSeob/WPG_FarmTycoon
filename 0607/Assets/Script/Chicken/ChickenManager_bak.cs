@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChickenManager : MonoBehaviour
+public class ChickenManager_bak : MonoBehaviour
 {
     void Start()
     {
