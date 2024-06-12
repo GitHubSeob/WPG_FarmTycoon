@@ -25,8 +25,8 @@ public class AnimalManager : MonoBehaviour
     int growAge;
     int growTime;
     public GameObject upgradeTarget;
-    GameObject foodbox;
-    GameObject foodInterface;
+    //GameObject foodbox;
+    GameObject goInterface;
 
     Animator animator;
     [SerializeField]
@@ -48,8 +48,8 @@ public class AnimalManager : MonoBehaviour
         growAge = 10;
         growTime = 60;
         animator = GetComponent<Animator>();
-        foodbox = GameObject.Find(animalType + "FoodBox");
-        foodInterface = GameObject.Find("Interface");
+        //foodbox = GameObject.Find(animalType + "FoodBox");
+        goInterface = GameObject.Find("Interface");
     }
 
     int getRandom(int n)
@@ -98,21 +98,20 @@ public class AnimalManager : MonoBehaviour
 
     void slaugher()
     {
-        GameObject go = GameObject.Find("Interface");
-        GameObject general = GameObject.Find("GeneralAnimal");
-        if (this.gameObject.tag == "Chick1")
+        GameObject general = GameObject.Find("GeneralManager");
+        if (this.gameObject.tag == "Chicken1")
         {
-            go.GetComponent<ProductionInterface>().updateChickenCount(1);
+            goInterface.GetComponent<ProductionInterface>().updateChickenCount(1);
             --general.GetComponent<General>().chickenCount;
         }
         else if (this.gameObject.tag == "Horse1")
         {
-            go.GetComponent<ProductionInterface>().updateHorseCount(1);
+            goInterface.GetComponent<ProductionInterface>().updateHorseCount(1);
             --general.GetComponent<General>().horseCount;
         }
         else if (this.gameObject.tag == "Deer1")
         {
-            go.GetComponent<ProductionInterface>().updateDeerCount(1);
+            goInterface.GetComponent<ProductionInterface>().updateDeerCount(1);
             --general.GetComponent<General>().deerCount;
         }
         else
@@ -136,18 +135,7 @@ public class AnimalManager : MonoBehaviour
             {
                 if (Random.Range(0, 10) == 0)
                 {
-                    if (animalType == "Chicken" && foodInterface.GetComponent<FoodInterface>().updateChickenCount(-1))
-                    {
-                        ++age;
-                        Debug.Log(this.gameObject.name + " : " + age);
-                    }
-                    if (animalType == "Deer" && foodInterface.GetComponent<FoodInterface>().updateDeerCount(-1))
-                    {
-                        ++age;
-                        Debug.Log(this.gameObject.name + " : " + age);
-                    }
-                    if (animalType == "Horse" && foodInterface.GetComponent<FoodInterface>().updateHorseCount(-1))
-                    //if (foodbox.GetComponent<FoodBox>().subFoodCount())
+                    if (goInterface.GetComponent<FoodInterface>().updateCount(this.gameObject.tag, -1))
                     {
                         ++age;
                         Debug.Log(this.gameObject.name + " : " + age);

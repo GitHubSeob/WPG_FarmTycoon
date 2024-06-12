@@ -40,33 +40,22 @@ public class General : MonoBehaviour
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
                 GameObject selection = hit.collider.gameObject;
-                Debug.Log("Ray : " + selection.name);
-                if (selection.name == "HorseFoodBox")
+
+                // Food Box
+                if (selection.name.Contains("FoodBox"))
                 {
-                    GameObject fi = GameObject.Find("Interface");
-                    fi.GetComponent<FoodInterface>().updateHorseCount(3);
-                    // selection.GetComponent<FoodBox>().addFoodCount(3);
-                    // selection.GetComponent<FoodBox>().update();
-                    Debug.Log("HorseFoodBox Count : " + selection.GetComponent<FoodBox>().getFoodCount());
+                    GameObject goi = GameObject.Find("Interface");
+                    goi.GetComponent<FoodInterface>().updateCount(selection.name, 3);
+                    goi.GetComponent<FoodInterface>().printCounts();
                 }
-                else if (selection.name == "DeerFoodBox")
-                {
-                    GameObject fi = GameObject.Find("Interface");
-                    fi.GetComponent<FoodInterface>().updateDeerCount(3);
-                    // selection.GetComponent<FoodBox>().addFoodCount(3);
-                    Debug.Log("DeerFoodBox Count : " + selection.GetComponent<FoodBox>().getFoodCount());
-                }
-                if (selection.name == "ChickenFoodBox")
-                {
-                    GameObject fi = GameObject.Find("Interface");
-                    fi.GetComponent<FoodInterface>().updateChickenCount(3);
-                    // selection.GetComponent<FoodBox>().addFoodCount(3);
-                    Debug.Log("ChickenFoodBox Count : " + selection.GetComponent<FoodBox>().getFoodCount());
-                }
-                else if (selection.name.Contains("Chicken_") || selection.name.Contains("Deer_") || selection.name.Contains("Horse_"))
+
+                // Animals
+                else if (selection.tag.Contains("Chicken") || selection.tag.Contains("Deer") || selection.tag.Contains("Horse"))
                 {
                     selection.GetComponent<AnimalManager>().printLog();
                 }
+
+                // Spawn New
                 else if (selection.name.Contains("NewDeer"))
                 {
                     if (deerCount < deerMaxCount)
@@ -94,15 +83,50 @@ public class General : MonoBehaviour
                         ++chickenCount;
                     }
                 }
+
+                // Interface
                 else if (selection.name.Contains("PITemp"))
                 {
                     GameObject pi = GameObject.Find("Interface");
                     pi.GetComponent<ProductionInterface>().printCounts();
                 }
-            }
-            else
-            {
-                Debug.Log("Ray Failed");
+                else if (selection.name.Contains("FITemp"))
+                {
+                    GameObject pi = GameObject.Find("Interface");
+                    pi.GetComponent<FoodInterface>().printCounts();
+                }
+
+                // SlauterAll
+                else if (selection.name.Contains("SlauterAll"))
+                {
+                    GameObject[] chickens = GameObject.FindGameObjectsWithTag("Chicken1");
+                    foreach (GameObject chicken in chickens)
+                    {
+                        chicken.GetComponent<AnimalManager>().printLog();
+                    }
+
+                    GameObject[] horses = GameObject.FindGameObjectsWithTag("Horse1");
+                    foreach (GameObject horse in horses)
+                    {
+                        horse.GetComponent<AnimalManager>().printLog();
+                    }
+
+                    GameObject[] deers = GameObject.FindGameObjectsWithTag("Deer1");
+                    foreach (GameObject deer in deers)
+                    {
+                        deer.GetComponent<AnimalManager>().printLog();
+                    }
+                }
+
+                // Shops
+                else if (selection.name == "MainHouse"
+                        || selection.name == "MeatShop"
+                        || selection.name == "VegetableShop"
+                        || selection.name == "Caravan"
+                        || selection.name == "WeaponShop")
+                {
+                    Debug.Log("**SHOP** " + selection.name);
+                }
             }
         }
     }

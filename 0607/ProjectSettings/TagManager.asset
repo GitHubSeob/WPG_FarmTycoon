@@ -6,13 +6,13 @@ TagManager:
   tags:
   - Canvas
   - Button
-  - Chick1
-  - Chick2
   - FoodBox
   - Horse1
   - Horse2
   - Deer1
   - Deer2
+  - Chicken1
+  - Chicken2
   layers:
   - Default
   - TransparentFX
