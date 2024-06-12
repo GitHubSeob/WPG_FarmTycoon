@@ -14118,6 +14118,9 @@ MonoBehaviour:
   chicken: {fileID: 7421524269087739016, guid: 4cbf48894a5d35e47b2aa1a9935575d1, type: 3}
   deer: {fileID: 2710175581853821824, guid: ae61080f5b5f00543a57bd604cc9e305, type: 3}
   horse: {fileID: 7118934054230716375, guid: 04e8dc11ee6809d45999a647831d2e04, type: 3}
+  chickenCount: 0
+  deerCount: 0
+  horseCount: 0
   chickenMaxCount: 50
   deerMaxCount: 10
   horseMaxCount: 20
@@ -20091,8 +20094,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2029960164}
   - component: {fileID: 2029960163}
+  - component: {fileID: 2029960165}
   m_Layer: 0
-  m_Name: ProductionInterface
+  m_Name: Interface
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20125,6 +20129,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2029960165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029960162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d1f3f08d207dd542ad517abccd14a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2040590742 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 942762337184432749, guid: b9c7a183a7a2e004cb24435cb080a708, type: 3}

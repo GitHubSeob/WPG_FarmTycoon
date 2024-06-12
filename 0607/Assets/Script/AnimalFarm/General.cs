@@ -43,17 +43,24 @@ public class General : MonoBehaviour
                 Debug.Log("Ray : " + selection.name);
                 if (selection.name == "HorseFoodBox")
                 {
-                    selection.GetComponent<FoodBox>().addFoodCount(3);
+                    GameObject fi = GameObject.Find("Interface");
+                    fi.GetComponent<FoodInterface>().updateHorseCount(3);
+                    // selection.GetComponent<FoodBox>().addFoodCount(3);
+                    // selection.GetComponent<FoodBox>().update();
                     Debug.Log("HorseFoodBox Count : " + selection.GetComponent<FoodBox>().getFoodCount());
                 }
                 else if (selection.name == "DeerFoodBox")
                 {
-                    selection.GetComponent<FoodBox>().addFoodCount(3);
+                    GameObject fi = GameObject.Find("Interface");
+                    fi.GetComponent<FoodInterface>().updateDeerCount(3);
+                    // selection.GetComponent<FoodBox>().addFoodCount(3);
                     Debug.Log("DeerFoodBox Count : " + selection.GetComponent<FoodBox>().getFoodCount());
                 }
                 if (selection.name == "ChickenFoodBox")
                 {
-                    selection.GetComponent<FoodBox>().addFoodCount(3);
+                    GameObject fi = GameObject.Find("Interface");
+                    fi.GetComponent<FoodInterface>().updateChickenCount(3);
+                    // selection.GetComponent<FoodBox>().addFoodCount(3);
                     Debug.Log("ChickenFoodBox Count : " + selection.GetComponent<FoodBox>().getFoodCount());
                 }
                 else if (selection.name.Contains("Chicken_") || selection.name.Contains("Deer_") || selection.name.Contains("Horse_"))
@@ -89,7 +96,7 @@ public class General : MonoBehaviour
                 }
                 else if (selection.name.Contains("PITemp"))
                 {
-                    GameObject pi = GameObject.Find("ProductionInterface");
+                    GameObject pi = GameObject.Find("Interface");
                     pi.GetComponent<ProductionInterface>().printCounts();
                 }
             }
